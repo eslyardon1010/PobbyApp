@@ -1,27 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
-import { fetchPets } from "../../api";
+import * as React from 'react';
+import Header from "../appbarHeader"
 
-const Home = ({ navigation }) => {
-  const [pets, setPets] = useState({});
-
-  const getPets = async () => {
-    const response = await fetchPokemons();
-
-    setPets(response);
-  };
-
-  useEffect(() => {
-    getPets();
-  }, []);
-
+const Home = () => {
   return (
-    <View>
-      <CardList pets={pets} navigation={navigation} />
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({});
-
+    <Header/>
+   );
+}
+                              xxxx
 export default Home;
