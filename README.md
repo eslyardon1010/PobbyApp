@@ -1,2 +1,2 @@
 # PobbyApp
-Utilización de Api-Petfinder para adopción de animales
+Utilización de Api-Cocktaildb con React-Native y expo
