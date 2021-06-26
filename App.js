@@ -1,19 +1,16 @@
-import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
-import { Provider as PaperProvider } from "react-native-paper";
-import theme from "./src/theme";
-import Home from "./src/componentes/screens/Home";
+import React from 'react';
+//import Contador from './components/Contador'
+//import Formulario from './components/Formulario'
+import Nosotros  from './src/index'
 
-const Stack = createStackNavigator();
 
-export default function App() {
-  return (
-    <PaperProvider theme={theme}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </PaperProvider>
-  );
+
+function App() {
+    return ( 
+      <div>
+        <Nosotros />
+      </div>
+    );
 }
+
+export default App;
