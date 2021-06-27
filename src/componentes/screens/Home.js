@@ -1,28 +1,32 @@
-import * as React from 'react';
-import Header from "../appbarHeader"
-import { StyleSheet, View } from "react-native";
-import { Searchbar } from 'react-native-paper';
-import { Button } from 'react-native-paper';
-
+import React, { useEffect, useState } from "react";
+import { ScrollView, StyleSheet, View} from "react-native";
+import CardList from "../../componentes/CardCocktailsList";
+import {fetchDrinksLetter} from '../../api/index'
 
 const Home = () => {
-  const [searchQuery, setSearchQuery] = React.useState('');
-   const onChangeSearch = query => setSearchQuery(query);
-return ( 
-  <View>
-        <Header/>
-    <Searchbar
-      placeholder="Search"
-      onChangeText={onChangeSearch}
-      value={searchQuery}
-    />
-    <Button icon="" mode="contained" onPress={() => console.log('Pressed')}>
-    Mascotas
-  </Button>
-   </View> 
+const [drinks, setdrinks] = useState({});
 
-    );
-    
-}
+  const getdrinks = async () => {
+    const response = await fetchDrinksLetter();
 
+    setdrinks(response);
+  };
+
+  useEffect(() => {
+    getdrinks();
+  }, []);
+
+  return (
+    <ScrollView>
+      <View>
+        <>{drinks.drinks ? <CardList randomR={drinks} /> : null}</>
+        <myTabContainer/>
+      </View>
+      </ScrollView>
+
+  );
+
+};
+
+const styles = StyleSheet.create({});
 export default Home;

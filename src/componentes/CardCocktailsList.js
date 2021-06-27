@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import Card from "./RandomCocktails";
+import Card from "../componentes/CardCocktails";
 
 const CardList = ({ randomR }) => {
   return (
@@ -11,6 +11,7 @@ const CardList = ({ randomR }) => {
     </View>  
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
