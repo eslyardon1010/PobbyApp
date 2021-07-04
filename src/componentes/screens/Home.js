@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, Image, ImageBackground, View, TouchableOpacity } from "react-native";
 import SearchDrink from '../SearchDrink'
-import CardCocktailList from '../CardCocktailList'
-import CardFlip from 'react-native-card-flip';
 import BarraDeBusqueda from "../SearchDrink";
 const Home = ({ navigation }) => {
 
@@ -65,13 +63,14 @@ const styles = StyleSheet.create({
     width: 300,
     height: 35,
     borderRadius: 30,
-    marginLeft: '2rem'
+    marginLeft: '32px'
   },
   container: {
           position: 'relative',
           flex: 1,
           backgroundColor: '#6c5ce7',
-          textAlign: 'center',
+    display: 'inline-block',
+          textAlign: 'center'
         },
 
   Text: {
@@ -83,6 +82,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: '50%',
     left: '50%',
+        transform: 'translate(-50%, -50%)'
          },
   buttonAlcoholic: {
     position: 'relative',
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
           width: 110,
           height: 110,
           marginLeft: '1.1rem',
-    marginTop: '1rem',
+    marginTop: '16px',
           borderRadius: 100
           },
   buttonNonAlcoholic: {
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
           zIndex: 1,
           width: 110,
           height: 110,
-    marginLeft: '1.1rem',
+    marginLeft: '17px',
           marginTop: .5
   }
   ,
@@ -106,32 +106,31 @@ const styles = StyleSheet.create({
          position : 'absolute',
           width: 110,
          height: 110,
-    marginLeft: '14.9rem',
-    marginTop: '8rem'
+    marginLeft: '239px',
+    marginTop: '130px'
              },
   button_Cocktail: {
           position: 'absolute',
           width: 110,
           height: 110,
-          marginLeft: '14.9rem',
-    marginTop: '1rem',
+          marginLeft: '239px',
+    marginTop: '16px',
          },
   button_Random: {
             position: 'absolute',
           width: 110,
             height: 110,
-    marginLeft: '8rem',
-    marginTop: '1rem'
+    marginLeft: '130px',
+    marginTop: '16px'
          },
   button_Champagne: {
             position: 'absolute',
           width: 110,
             height: 110,
-    marginLeft: '8rem',
-    marginTop: '8rem'
+    marginLeft: '130px',
+    marginTop: '130px'
   }
       
        });
-      
       
 export default Home;

@@ -1,6 +1,5 @@
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Home from './screens/Home';
-import Favoritos from './screens/Favoritos'
 
 // (...)
 

@@ -1,9 +1,19 @@
 import React from 'react';
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, Image } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from './src/componentes/screens/Home'
-import {myTabContainer} from './src/componentes/TabNavigation'
-import {Image} from "react-native";
+//import Alcoholic from './src/componentes/screens/subScreens/Alcoholic'
+//import NonAlcoholic from './src/componentes/screens/subScreens/NonAlcoholic'
+import { OrdinaryDrink, NonAlcoholic, Alcoholic, Cocktail, Champagne, Random } from './src/componentes/screens/categoriaScreens';
+import{ AlcoholicInfo } from './src/componentes/screens/Info'
+import AlcoholicScreen from './src/componentes/screens/AlcoholicScreen'
+import NonAlcoholicScreen from './src/componentes/screens/NonAlcoholicScreen'
+import ChampagneScreen from './src/componentes/screens/ChampagneScreen'
+import RandomScreen from './src/componentes/screens/RandomScreen'
+import CocktailScreen from './src/componentes/screens/CocktailsScreen'
+import OrdinaryDrinkScreen from './src/componentes/screens/OrdinaryDrinkScreen'
+
+
 function LogoCocktail() {
   return (
     <Image
@@ -12,14 +22,24 @@ function LogoCocktail() {
     />
   );
 }
+
+
+
 const Stack = createStackNavigator();
 export default function App() {
   return (
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: 'black' } }}>
-          <Stack.Screen name="Home" component={Home} options={{ headerTitle: props => <LogoCocktail {...props} /> }}/>
+      <Stack.Navigator>
+           <Stack.Screen name="Home" component={Home} />
+         <Stack.Screen name="Alcoholic" component={AlcoholicScreen} />
+         <Stack.Screen name="NonAlcoholic" component={NonAlcoholicScreen} />
+        <Stack.Screen name="OrdinaryDrink" component={OrdinaryDrinkScreen} />
+        <Stack.Screen name="Cocktail" component={CocktailScreen} />
+        <Stack.Screen name="Champagne" component={ChampagneScreen} />
+        <Stack.Screen name = "Random" component = {RandomScreen} />
+        <Stack.Screen name="Informacion" component={AlcoholicInfo} />
+        
       </Stack.Navigator>
-    </NavigationContainer>
-
+      </NavigationContainer>
   );
 }
