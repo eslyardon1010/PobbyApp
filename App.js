@@ -4,7 +4,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from './src/componentes/screens/Home'
 //import Alcoholic from './src/componentes/screens/subScreens/Alcoholic'
 //import NonAlcoholic from './src/componentes/screens/subScreens/NonAlcoholic'
-import { OrdinaryDrink, NonAlcoholic, Alcoholic, Cocktail, Champagne, Random } from './src/componentes/screens/categoriaScreens';
 import{ AlcoholicInfo } from './src/componentes/screens/Info'
 import AlcoholicScreen from './src/componentes/screens/AlcoholicScreen'
 import NonAlcoholicScreen from './src/componentes/screens/NonAlcoholicScreen'

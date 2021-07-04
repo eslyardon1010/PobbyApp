@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     elevation: 9,
   },
   imageStyle: {
-    marginLeft: '-192px',
+    marginLeft: -192,
     marginTop: 5,
     height: 100,
     width:100,
@@ -102,10 +102,10 @@ const styles = StyleSheet.create({
     zIndex: 1,
     fontSize: 14,
     textAlign: 'center',
-    marginTop: '-58px',
-    marginLeft: '80px',
-    fontWeight: '100',
+    marginTop: -58,
+    marginLeft: 80,
+    fontWeight: "normal",
     color: '#fff',
-    fontFamily: 'Uchen',
+    
   }
 });

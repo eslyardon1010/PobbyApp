@@ -59,38 +59,37 @@ const Home = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   searchBar: {
-    marginTop: '1.5rem',
+    marginTop: 20,
     width: 300,
     height: 35,
     borderRadius: 30,
-    marginLeft: '32px'
+    marginLeft: 32
   },
   container: {
           position: 'relative',
           flex: 1,
           backgroundColor: '#6c5ce7',
-    display: 'inline-block',
           textAlign: 'center'
         },
 
   Text: {
     zIndex: 1,
-    fontFamily: 'Roboto',
+    
         marginTop:30,      
         color: 'white',
     fontSize: 14,
     position: 'absolute',
     top: '50%',
     left: '50%',
-        transform: 'translate(-50%, -50%)'
+       
          },
   buttonAlcoholic: {
     position: 'relative',
           zIndex: 1,
           width: 110,
           height: 110,
-          marginLeft: '1.1rem',
-    marginTop: '16px',
+          marginLeft: 17,
+    marginTop: 16,
           borderRadius: 100
           },
   buttonNonAlcoholic: {
@@ -98,7 +97,7 @@ const styles = StyleSheet.create({
           zIndex: 1,
           width: 110,
           height: 110,
-    marginLeft: '17px',
+    marginLeft: 17,
           marginTop: .5
   }
   ,
@@ -106,29 +105,29 @@ const styles = StyleSheet.create({
          position : 'absolute',
           width: 110,
          height: 110,
-    marginLeft: '239px',
-    marginTop: '130px'
+    marginLeft: 239,
+    marginTop: 130
              },
   button_Cocktail: {
           position: 'absolute',
           width: 110,
           height: 110,
-          marginLeft: '239px',
-    marginTop: '16px',
+          marginLeft: 239,
+    marginTop: 16,
          },
   button_Random: {
             position: 'absolute',
           width: 110,
             height: 110,
-    marginLeft: '130px',
-    marginTop: '16px'
+    marginLeft: 130,
+    marginTop: 16
          },
   button_Champagne: {
             position: 'absolute',
           width: 110,
             height: 110,
-    marginLeft: '130px',
-    marginTop: '130px'
+    marginLeft: 130,
+    marginTop: 130
   }
       
        });
