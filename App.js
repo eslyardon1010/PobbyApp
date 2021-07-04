@@ -11,7 +11,7 @@ import ChampagneScreen from './src/componentes/screens/ChampagneScreen'
 import RandomScreen from './src/componentes/screens/RandomScreen'
 import CocktailScreen from './src/componentes/screens/CocktailsScreen'
 import OrdinaryDrinkScreen from './src/componentes/screens/OrdinaryDrinkScreen'
-
+import {Header} from './src/componentes/appbarHeader'
 
 function LogoCocktail() {
   return (
@@ -27,7 +27,7 @@ function LogoCocktail() {
 const Stack = createStackNavigator();
 export default function App() {
   return (
-      <NavigationContainer>
+    <NavigationContainer>
       <Stack.Navigator>
            <Stack.Screen name="Home" component={Home} />
          <Stack.Screen name="Alcoholic" component={AlcoholicScreen} />
@@ -36,8 +36,7 @@ export default function App() {
         <Stack.Screen name="Cocktail" component={CocktailScreen} />
         <Stack.Screen name="Champagne" component={ChampagneScreen} />
         <Stack.Screen name = "Random" component = {RandomScreen} />
-        <Stack.Screen name="Informacion" component={AlcoholicInfo} />
-        
+        <Stack.Screen name="Informacion" component={AlcoholicInfo} />       
       </Stack.Navigator>
       </NavigationContainer>
   );
