@@ -1,51 +1,111 @@
-import React from "react";
-import {Image, StyleSheet, Text, View } from "react-native";
-import {useFonts, Roboto_400Regular, Merriweather_400Regular, OpenSans_400Regular} from '@expo-google-fonts/dev'
- const Card = ({ random}) => {
+import React, {useEffect} from "react";
+import {Image, StyleSheet, Text, View, Dimensions, TouchableOpacity, FlatList } from "react-native";
 
-   return (
+
+export const CardDrink = ({ navigation, cocktail, index }) => {
+
+    return (
+
       <View style={styles.container}>
-      <Text style={styles.title}>{random.strDrink}</Text>
-      <Text style={styles.texto}>{'\n'}Instrucciones{'\n'}{random.strInstructions}{'\n'}{'\n'}</Text>
-      <Text style={styles.texto}> Categoria {'\n'}{random.strCategory}{'\n'}{'\n'}</Text>
-      <View style={styles.image}>
-        <Image style={styles.image} source={{ uri: random.strDrinkThumb }} />
+        
+        <TouchableOpacity onPress={() => { navigation.navigate("Informacion",  ) }}>
+        <View style={styles.cardContainer}>
+          <Image style={styles.imageStyle} source={{ uri: cocktail.strDrinkThumb }} />
+            <View>
+              <Text style={styles.titleStyle}>{index = cocktail.idDrink}</Text>
+             <Text style={styles.titleStyle}>{cocktail.strDrink}</Text>
+        </View>
+          </View>
+          </TouchableOpacity>
       </View>
-       </View>
+
+  
   );
 };
 
+export const CardInformation = ({drinks, cocktail, navigation, index }) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.card}>
+        <Text style={styles.titleStyle}>{index=cocktail.idDrink}</Text>
+          <Image style={styles.imageStyle} source={{ uri: cocktail.strDrinkThumb }} />
+        <View>
+          <Text style={styles.titleStyle}>{cocktail.strDrink}</Text>
+           <Text style={styles.texto}>{cocktail.strCategory}</Text>
+           <Text style={styles.texto}>{cocktail.strInstructions}</Text>
+        </View>
+          </View>
+    </View>
+    
+  );
+}
+
+
+
+
+
+
+const deviceWidth = Math.round(Dimensions.get('window').width);
+const offset = 15;
+const radius = 30;
+
 
 const styles = StyleSheet.create({
+
+
+  card: {
+    padding: 10,
+    margin: 10,
+  },
+   actions: {
+    alignContent: "center",
+  },
   texto: {
-    fontSize: 12,
-    fontFamily: OpenSans_400Regular,
+    fontSize: 14,
     textAlign: 'justify',
   },
-    image: {
-    width: 200,
-      height: 200,
-      borderRadius: 15,
-      alignSelf: 'center',
-  },
   container: {
-    padding: 20,
-    margin: 0.5,
-    borderColor: "#ffecb3",
-    borderRadius: 24,
-    backgroundColor: '#ffbdf3',
-    marginTop: 10,
-    flex: 1,
-    width: 300,
-    height: 300
+    width: deviceWidth - 10,
+    alignItems: 'center',
+    marginTop: 20,
+  }, 
+  labelStyle: {
+    fontSize: 24,
+    fontWeight: '700',
   },
-  title: {
-    fontFamily: Merriweather_400Regular,
-    fontSize: 20,
-    color: 'blue',
-    fontWeight: "bold",
-    alignSelf: "center",
+  cardContainer: {
+    width: deviceWidth - offset,
+    backgroundColor: '#000',
+    height: 110
+    ,
+    borderRadius: radius,
+    shadowColor: '#ffe045',
+    shadowOffset: {
+      width: 5,
+      height: 5,
+    },
+    shadowOpacity: 0.75,
+    shadowRadius: 5,
+    elevation: 9,
+  },
+  imageStyle: {
+    marginLeft: '-192px',
+    marginTop: 5,
+    height: 100,
+    width:100,
+    borderRadius: 30,
+    opacity: 0.9,
+    alignContent: 'center',
+    alignSelf: 'center',
+  },
+  titleStyle: {
+    zIndex: 1,
+    fontSize: 14,
+    textAlign: 'center',
+    marginTop: '-58px',
+    marginLeft: '80px',
+    fontWeight: '100',
+    color: '#fff',
+    fontFamily: 'Uchen',
   }
 });
-
-export default Card

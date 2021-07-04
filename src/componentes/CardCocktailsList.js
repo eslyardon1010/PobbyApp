@@ -1,27 +1,38 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import Card from "../componentes/CardCocktails";
+import { StyleSheet, TouchableOpacity, View, FlatList } from "react-native";
+import { CardDrink, CardInformation} from "../componentes/CardCocktail";
 
-const CardList = ({ randomR }) => {
+export const CardCocktailList = ({ cocktail, navigation, index }) => {
   return (
+ 
+     
     <View style={styles.container}>
-      {randomR.drinks.map((random, index) => (
-        <Card key={index} random={random} />
+      {cocktail.drinks.map((cock, index) => (
+        <CardDrink key={index} cocktail={cock} navigation={navigation} />
       ))}
-    </View>  
+      </View>
   );
 };
+
+export const CardListInfo = ({ drinks, cocktail, navigation }) => {
+  return (
+    <View style={styles.container}>
+      {cocktail.drinks.map((name, index) => (
+      <CardInformation key = {index} cocktail= {name} navigation= {navigation}/>
+      ))}
+</View>
+  );
+}
+
+
+
 
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
-    marginLeft: 10,
-    marginRight: 10,
+    justifyContent: "center"
   },
 });
 
-export default CardList;
