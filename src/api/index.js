@@ -8,16 +8,16 @@ const { apiUrlbyOrdinaryDrink } = getEnvVars();
 const { apiUrlbyCocktail } = getEnvVars();
 const { apiUrlbyLetter } = getEnvVars();
 const {apiUrlbyMostrar} = getEnvVars();
-let drinkId;
+let name;
 
-export const guardarDrinkId = ({ guardarDrink }) => {
+export const obtenerName = ({ obtener }) => {
 
-    drinkId = guardarDrink;
+    name = obtener;
 
 }
 export const fetchDrinkAlcoholic = async() => {
     try {
-        const endpoint = apiUrlbyTypeDrinkAlcoholic;
+        const endpoint = `${apiUrlbyTypeDrinkAlcoholic}${name}`;
 
         // PETICION A LA API
         const response = await fetch(endpoint);
@@ -124,14 +124,16 @@ export const fetchDrinkRandom = async () => {
         };
 
 
-export const mostrarDrink = async() => {
+export const mostrarInfo = async() => {
+
+
     try {
-        const endpoint = `${apiUrlbyMostrar}${drinkId}`
+        const endpoint = `${apiUrlbyMostrar}${name}`
         const response = await fetch(endpoint);
         const data = await response.json();
 
+        console.log(data);
         return data;
-
     } catch (error) {
         console.log(error);
         return {
@@ -141,4 +143,5 @@ export const mostrarDrink = async() => {
     };
 
 };
+
 

@@ -1,24 +1,22 @@
 import React, {useEffect} from "react";
 import {Image, StyleSheet, Text, View, Dimensions, TouchableOpacity, FlatList } from "react-native";
-
+import {obtenerName} from '../api/index'
 
 export const CardDrink = ({ navigation, cocktail, index }) => {
 
     return (
 
       <View style={styles.container}>
-        
-        <TouchableOpacity onPress={() => { navigation.navigate("Informacion",  ) }}>
+        <TouchableOpacity onPress={() => { navigation.navigate("Informacion", obtenerName(obtener=index)) }}>
         <View style={styles.cardContainer}>
           <Image style={styles.imageStyle} source={{ uri: cocktail.strDrinkThumb }} />
             <View>
-              <Text style={styles.titleStyle}>{index = cocktail.idDrink}</Text>
+              <Text style={styles.titleStyle}>{cocktail.idDrink}</Text>
              <Text style={styles.titleStyle}>{cocktail.strDrink}</Text>
         </View>
           </View>
           </TouchableOpacity>
       </View>
-
   
   );
 };

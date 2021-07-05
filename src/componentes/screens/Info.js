@@ -1,20 +1,16 @@
 
 import React, { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, View, StatusBar, TouchableOpacity} from "react-native";
-import {mostrarDrink, fetchDrinkNonAlcoholic,fetchDrinkOrdinary, fetchDrinkCocktail, fetchDrinkChampagne, drinkInfo} from '../../api/index'
+import {mostrarDrink, fetchDrinkNonAlcoholic,fetchDrinkOrdinary, fetchDrinkCocktail, fetchDrinkChampagne, drinkInfo, fetchDrinkAlcoholic} from '../../api/index'
 
 import { CardListInfo } from '../CardCocktailList'
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { CardCocktailList } from "../CardCocktailList";
 
-
-
+import {CardCocktailList} from '../CardCocktailList'
 export const AlcoholicInfo = ({navigation, name}) => {
 const [drinks,  setdrinks] = useState({});
 
   const getdrinks = async () => {
-    const response = await mostrarDrink();
+    const response = await fetchDrinkAlcoholic();
 
     setdrinks(response);
   };
@@ -27,7 +23,7 @@ const [drinks,  setdrinks] = useState({});
     <View style={styles.container}>
     <ScrollView>
         <View>
-          <>{drinks.drinks ? <CardListInfo cocktail={drinks} navigation={navigation} />  : null}</>
+          <>{drinks.drinks ? <CardCocktailList cocktail={drinks} navigation={navigation} />  : null}</>
         </View>
       </ScrollView>
     </View>
