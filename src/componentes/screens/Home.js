@@ -47,7 +47,7 @@ const Home = ({ navigation }) => {
         </TouchableOpacity>
           <Text style={styles.txtT}>Pobby's Cocktail</Text>
         <Text style={styles.parrafo}>We offer a wide range of beverage recipes from various categories such as:
-Alcoholicas, non-alcoholic, cocktails, champagne, <br/> ordinary and random drinks, as well as a more in-depth view of each specific drink
+Alcoholicas, non-alcoholic, cocktails, champagne, ordinary and random drinks, as well as a more in-depth view of each specific drink
         </Text>
         <TouchableOpacity onPress={() => {navigation.navigate("popular")}} style={styles.button_Popular}> 
             <Text style={styles.txt}>Most popular drinks</Text>
@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
     color: '#ffe045',
     fontStyle: "italic",
     fontWeight: "bold",
+   
   },
   parrafo: {
     textAlign: "justify",
@@ -84,6 +85,7 @@ const styles = StyleSheet.create({
     color: '#ffe045',
     fontStyle: "italic",
     fontWeight: "bold",
+
   }, 
   img: {
     width: 100,
