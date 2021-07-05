@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, View, StatusBar, TouchableOpacity} from "react-
 import {fetchDrinkCocktail} from '../../api/index'
 
 import {CardCocktailList} from '../CardCocktailList';
-const Cocktail = () => {
+const Cocktail = ({navigation}) => {
 const [drinks, setdrinks] = useState({});
 
   const getdrinks = async () => {
@@ -21,7 +21,7 @@ const [drinks, setdrinks] = useState({});
    
     <ScrollView>
       <View>
-        <>{drinks.drinks ? <CardCocktailList cocktail={drinks} /> : null}</>
+        <>{drinks.drinks ? <CardCocktailList cocktail={drinks} navigation = {navigation} /> : null}</>
       </View>
       </ScrollView>
       </View>

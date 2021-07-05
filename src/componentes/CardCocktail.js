@@ -1,13 +1,13 @@
 import React, {useEffect} from "react";
 import {Image, StyleSheet, Text, View, Dimensions, TouchableOpacity, FlatList } from "react-native";
-import {obtenerName} from '../api/index'
+import { obtenerName } from "../api";
 
 export const CardDrink = ({ navigation, cocktail, index }) => {
-
+console.log(cocktail);
     return (
 
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => { navigation.navigate("Informacion", obtenerName(obtener=index)) }}>
+        <TouchableOpacity onPress={() => { navigation.navigate("AlcoholicInfo", obtenerName({obtener : {cocktail}})),console.log(index); }}>
         <View style={styles.cardContainer}>
           <Image style={styles.imageStyle} source={{ uri: cocktail.strDrinkThumb }} />
             <View>

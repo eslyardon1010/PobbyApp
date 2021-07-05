@@ -13,21 +13,18 @@ export const CardCocktailList = ({ cocktail, navigation, index }) => {
       </View>
   );
 };
+//{cocktail.drinks.map((cock, index) => (
 
+ // ))}
 export const CardListInfo = ({ drinks, cocktail, navigation }) => {
   return (
     <View style={styles.container}>
-      {cocktail.drinks.map((name, index) => (
-      <CardInformation key = {index} cocktail= {name} navigation= {navigation}/>
-      ))}
+      <CardInformation key = {index} cocktail= {drinks} navigation= {navigation}/>
 </View>
   );
 }
-
-
-
-
-
+//{cocktail.drinks.map((name, index) => (
+//      ))}
 const styles = StyleSheet.create({
   container: {
     flex: 1,

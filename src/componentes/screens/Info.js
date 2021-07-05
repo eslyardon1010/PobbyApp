@@ -1,19 +1,20 @@
 
 import React, { useEffect, useState } from "react";
-import { ScrollView, StyleSheet, View, StatusBar, TouchableOpacity} from "react-native";
-import {mostrarDrink, fetchDrinkNonAlcoholic,fetchDrinkOrdinary, fetchDrinkCocktail, fetchDrinkChampagne, drinkInfo, fetchDrinkAlcoholic} from '../../api/index'
-
+import { ScrollView, StyleSheet, View, Text,StatusBar, TouchableOpacity} from "react-native";
+import {mostrarDrink, fetchDrinkNonAlcoholic,fetchDrinkOrdinary, fetchDrinkCocktail, fetchDrinkChampagne, drinkInfo, fetchDrinkAlcoholic, mostrarInfo} from '../../api/index'
 import { CardListInfo } from '../CardCocktailList'
 
 import {CardCocktailList} from '../CardCocktailList'
+
+
 export const AlcoholicInfo = ({navigation, name}) => {
 const [drinks,  setdrinks] = useState({});
 
   const getdrinks = async () => {
-    const response = await fetchDrinkAlcoholic();
-
+    const response = await mostrarInfo();
     setdrinks(response);
   };
+  console.log(drinks);
 
   useEffect(() => {
     getdrinks();
@@ -21,18 +22,18 @@ const [drinks,  setdrinks] = useState({});
 //const Stack = createStackNavigator();
   return (
     <View style={styles.container}>
-    <ScrollView>
-        <View>
-          <>{drinks.drinks ? <CardCocktailList cocktail={drinks} navigation={navigation} />  : null}</>
-        </View>
-      </ScrollView>
+      <Text>hola</Text>
     </View>
 
   );
 
 
 };
-
+//<ScrollView>
+//<View>
+ // <>{drinks.drinks ? <CardCocktailList cocktail={drinks} navigation={navigation} />  : null}</>
+//</View>
+//</ScrollView>
 export const NonAlcoholic = () => {
 const [drinks, setdrinks] = useState({});
 
