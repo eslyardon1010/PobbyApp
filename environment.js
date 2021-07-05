@@ -1,7 +1,7 @@
 import Constant from "expo-constants";
 const ENV = {
   dev: {
-        apiUrlbyName: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita",
+    apiUrlbyName: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita",
     apiUrlbyLetter: "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a",
     apiUrlbyIngredient: "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka",
     apiUrlbyId: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007",

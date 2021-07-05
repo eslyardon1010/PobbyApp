@@ -16,10 +16,12 @@ export const CardCocktailList = ({ cocktail, navigation, index }) => {
 //{cocktail.drinks.map((cock, index) => (
 
  // ))}
-export const CardListInfo = ({ drinks, cocktail, navigation }) => {
+export const CardListInfo = ({ index, cocktail, navigation }) => {
   return (
     <View style={styles.container}>
-      <CardInformation key = {index} cocktail= {drinks} navigation= {navigation}/>
+    {cocktail.drinks.map((cock, index) => (
+      <CardInformation key = {index} cocktail= {cock} navigation= {navigation}/>
+    ))}
 </View>
   );
 }

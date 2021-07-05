@@ -6,14 +6,14 @@ const { apiUrlbyTypeDrinkNonAlcoholic } = getEnvVars();
 const { apiUrlbyGlassChampagne } = getEnvVars();
 const { apiUrlbyOrdinaryDrink } = getEnvVars();
 const { apiUrlbyCocktail } = getEnvVars();
-const { apiUrlbyLetter } = getEnvVars();
+const { apiUrlbyName } = getEnvVars();
 const { apiUrlbyMostrar } = getEnvVars();
+let drink = '1-900-FUK-MEUP';
 let name;
-
 export const obtenerName = ({ obtener }) => {
 
     name = obtener;
-
+  console.log(name);
 }
 export const fetchDrinkAlcoholic = async() => {
     try {
@@ -108,19 +108,7 @@ export const fetchDrinkCocktail = async() => {
     }
 };
 export const fetchDrinkRandom = async() => {
-    fetch("https://the-cocktail-db.p.rapidapi.com/randomselection.php", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-key": "4d6118df9dmshe93a4fe8432dd5cp1d2fd1jsnda87c09e8414",
-                "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com"
-            }
-        })
-        .then(response => {
-            console.log(response);
-        })
-        .catch(err => {
-            console.error(err);
-        });
+   
 };
 
 

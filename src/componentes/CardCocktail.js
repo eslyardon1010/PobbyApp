@@ -2,17 +2,17 @@ import React, {useEffect} from "react";
 import {Image, StyleSheet, Text, View, Dimensions, TouchableOpacity, FlatList } from "react-native";
 import { obtenerName } from "../api";
 
-export const CardDrink = ({ navigation, cocktail, index }) => {
+export const CardDrink = ({ navigation, cocktail, name }) => {
 console.log(cocktail);
     return (
 
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => { navigation.navigate("AlcoholicInfo", obtenerName({obtener : {cocktail}})),console.log(index); }}>
+        <TouchableOpacity onPress={() => { navigation.navigate("AlcoholicInfo", obtenerName({ obtener: ( cocktail.strDrink)})),console.log("Este es "+name); }}>
         <View style={styles.cardContainer}>
           <Image style={styles.imageStyle} source={{ uri: cocktail.strDrinkThumb }} />
             <View>
               <Text style={styles.titleStyle}>{cocktail.idDrink}</Text>
-             <Text style={styles.titleStyle}>{cocktail.strDrink}</Text>
+              <Text style={styles.titleStyle}>{name =cocktail.strDrink}</Text>
         </View>
           </View>
           </TouchableOpacity>
@@ -21,11 +21,11 @@ console.log(cocktail);
   );
 };
 
-export const CardInformation = ({drinks, cocktail, navigation, index }) => {
+export const CardInformation = ({ cocktail}) => {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.titleStyle}>{index=cocktail.idDrink}</Text>
+        <Text style={styles.titleStyle}>{cocktail.idDrink}</Text>
           <Image style={styles.imageStyle} source={{ uri: cocktail.strDrinkThumb }} />
         <View>
           <Text style={styles.titleStyle}>{cocktail.strDrink}</Text>

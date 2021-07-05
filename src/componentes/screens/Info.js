@@ -7,7 +7,7 @@ import { CardListInfo } from '../CardCocktailList'
 import {CardCocktailList} from '../CardCocktailList'
 
 
-export const AlcoholicInfo = ({navigation, name}) => {
+export const AlcoholicInfo = ({navigation}) => {
 const [drinks,  setdrinks] = useState({});
 
   const getdrinks = async () => {
@@ -22,18 +22,18 @@ const [drinks,  setdrinks] = useState({});
 //const Stack = createStackNavigator();
   return (
     <View style={styles.container}>
-      <Text>hola</Text>
+    <ScrollView>
+<View>
+  <>{drinks.drinks ? <CardListInfo cocktail={drinks} navigation={navigation} /> : null}</>
+</View>
+</ScrollView>
     </View>
 
   );
 
 
 };
-//<ScrollView>
-//<View>
- // <>{drinks.drinks ? <CardCocktailList cocktail={drinks} navigation={navigation} />  : null}</>
-//</View>
-//</ScrollView>
+
 export const NonAlcoholic = () => {
 const [drinks, setdrinks] = useState({});
 
