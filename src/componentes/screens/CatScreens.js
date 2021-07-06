@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ScrollView, StyleSheet, View, StatusBar, TouchableOpacity} from "react-native";
+import { ScrollView, StyleSheet, View} from "react-native";
 import {fetchDrinkRandom,fetchDrinkOrdinary,fetchDrinkNonAlcoholic,fetchDrinkCocktail,fetchDrinkAlcoholic, fetchDrinkChampagne} from '../../api/index'
 
 import { CardCocktailList } from '../CardCocktailList';
@@ -33,7 +33,7 @@ const [drinks, setdrinks] = useState({});
 
 };
 
-export const Champagne = () => {
+export const Champagne = ({ navigation }) => {
 const [drinks, setdrinks] = useState({});
 
   const getdrinks = async () => {
@@ -50,7 +50,7 @@ const [drinks, setdrinks] = useState({});
     <View style={styles.container}>
     <ScrollView>
       <View>
-        <>{drinks.drinks ? <CardCocktailList cocktail={drinks} /> : null}</>
+          <>{drinks.drinks ? <CardCocktailList cocktail={drinks} navigation={navigation} /> : null}</>
          
       </View>
       </ScrollView>
@@ -77,7 +77,7 @@ const [drinks, setdrinks] = useState({});
    
     <ScrollView>
       <View>
-        <>{drinks.drinks ? <CardCocktailList cocktail={drinks} navigation = {navigation} /> : null}</>
+        <>{drinks.drinks ? <CardCocktailList cocktail={drinks} navigation={navigation} /> : null}</>
       </View>
       </ScrollView>
       </View>
@@ -85,7 +85,7 @@ const [drinks, setdrinks] = useState({});
 
 };
 
-export const NonAlcoholic = () => {
+export const NonAlcoholic = ({ navigation }) => {
 const [drinks, setdrinks] = useState({});
 
   const getdrinks = async () => {
@@ -102,7 +102,7 @@ const [drinks, setdrinks] = useState({});
     <View style={styles.container}>
     <ScrollView>
       <View>
-        <>{drinks.drinks ? <CardCocktailList cocktail={drinks} /> : null}</>
+         <>{drinks.drinks ? <CardCocktailList cocktail={drinks} navigation={navigation} /> : null}</>
 
       </View>
       </ScrollView>
@@ -110,7 +110,7 @@ const [drinks, setdrinks] = useState({});
   );
 
 };
-export const OrdinaryDrink = () => {
+export const OrdinaryDrink = ({ navigation }) => {
 const [drinks, setdrinks] = useState({});
 
   const getdrinks = async () => {
@@ -127,7 +127,7 @@ const [drinks, setdrinks] = useState({});
     <View style={styles.container}>
     <ScrollView>
       <View>
-        <>{drinks.drinks ? <CardCocktailList cocktail={drinks} /> : null}</>
+           <>{drinks.drinks ? <CardCocktailList cocktail={drinks} navigation={navigation} /> : null}</>
 
       </View>
       </ScrollView>
@@ -136,7 +136,7 @@ const [drinks, setdrinks] = useState({});
 
 };
 
-export  const Random = () => {
+export const Random = ({ navigation }) => {
 const [drinks, setdrinks] = useState({});
 
   const getdrinks = async () => {
@@ -153,7 +153,7 @@ const [drinks, setdrinks] = useState({});
     <View style={styles.container}>
     <ScrollView>
       <View>
-        <>{drinks.drinks ? <CardCocktailList cocktail={drinks} /> : null}</>
+        <>{drinks.drinks ? <CardCocktailList cocktail={drinks} navigation={navigation} /> : null}</>
          
       </View>
       </ScrollView>

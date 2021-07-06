@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { ScrollView,SafeAreaView, StyleSheet, View, Text,Dimensions, ImageBackground} from "react-native";
-import {mostrarDrink, fetchDrinkNonAlcoholic,fetchDrinkOrdinary, fetchDrinkCocktail, fetchDrinkChampagne, drinkInfo, fetchDrinkAlcoholic, mostrarInfo} from '../../api/index'
+import {mostrarInfo} from '../../api/index'
 import { CardListInfo } from '../CardCocktailList'
 import {CardCocktailList} from '../CardCocktailList'
 
