@@ -1,9 +1,8 @@
 
 import React, { useEffect, useState } from "react";
-import { ScrollView,SafeAreaView, StyleSheet, View, Text,Dimensions, ImageBackground} from "react-native";
+import { ScrollView, StyleSheet, View, Dimensions, ImageBackground} from "react-native";
 import {mostrarInfo} from '../../api/index'
 import { CardListInfo } from '../CardCocktailList'
-import {CardCocktailList} from '../CardCocktailList'
 
  const InfoGeneral = ({navigation}) => {
 const [drinks,  setdrinks] = useState({});
@@ -24,7 +23,7 @@ const [drinks,  setdrinks] = useState({});
       <ScrollView>
             <ImageBackground
           source={require("../../../assets/2backgr.png")}
-        style={styles.bgImage}
+        style={styles.Image}
        />
 <View>
   <>{drinks.drinks ? <CardListInfo cocktail={drinks} navigation={navigation} /> : null}</>
@@ -41,7 +40,7 @@ const [drinks,  setdrinks] = useState({});
 const {width, height} = Dimensions.get("screen");
 
 const styles = StyleSheet.create({
-  bgImage: {
+  Image: {
     marginTop: 170,
     flex:1,
     justifyContent:"center",

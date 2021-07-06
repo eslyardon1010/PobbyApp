@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, Image, ImageBackground, View, TouchableOpacity, ScrollView } from "react-native";
-import SearchDrink from '../SearchDrink'
+import React from "react";
+import { StyleSheet, Text, Image,  View, TouchableOpacity, ScrollView } from "react-native";
 import BarraDeBusqueda from "../SearchDrink";
-import {Header} from '../appbarHeader'
+
+
+
 const Home = ({ navigation }) => {
   return (
+    
+                     //*-----------------BOTONES PARA CATEGORIAS------------
     <View style={styles.container}>
      <BarraDeBusqueda navigation={navigation}/>
       <View>
         <Text style={styles.Tittle}>¿What do you want to drink today? </Text>
+
           <TouchableOpacity onPress={() => { navigation.navigate("Alcoholic") }} style={styles.buttonAlcoholic}> 
             <Text style={styles.Text}>Alcoholic</Text>
              <Image
@@ -25,7 +29,7 @@ const Home = ({ navigation }) => {
             <Text style={styles.Text}>Ordinary</Text>
             <Image
               style={styles.img}
-      source={require('../../../src/img/OrdinaryDrink.jpg')} />
+      source={require('../../../src/img/ordinary.jpg')} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {navigation.navigate("Cocktail")}} style={styles.button_Cocktail}> 
             <Text style={styles.Text}>Cocktail</Text>
@@ -37,7 +41,7 @@ const Home = ({ navigation }) => {
             <Text style={styles.Text}>Random</Text>
             <Image
              style={styles.img}
-      source={require('../../../src/img/randomImage.jpg')} />
+      source={require('../../../src/img/ramdom.jpg')} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {navigation.navigate("Champagne")}} style={styles.button_Champagne}> 
             <Text style={styles.Text}>Champagne</Text>

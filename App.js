@@ -2,22 +2,10 @@ import React from 'react';
 import { NavigationContainer, Image } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from './src/componentes/screens/Home'
-//import Alcoholic from './src/componentes/screens/subScreens/Alcoholic'
-//import NonAlcoholic from './src/componentes/screens/subScreens/NonAlcoholic'
-import {Alcoholic, NonAlcoholic, OrdinaryDrink, Cocktail, Champagne, Random} from './src/componentes/screens/CatScreens'
+import {Alcoholic, NonAlcoholic, OrdinaryDrink, Cocktail, Champagne, Random,Popular} from './src/componentes/screens/CatScreens'
 
 import InfoGeneral  from './src/componentes/screens/Info';
-
-function LogoCocktail() {
-  return (
-    <Image
-      style={{ width: 90, height: 90, alignSelf:'center', marginTop: 7}}
-      source={require('./assets/logo.png')}
-    />
-  );
-}
-
-
+import SearchResults from './src/componentes/screens/SearchResults';
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -31,7 +19,9 @@ export default function App() {
         <Stack.Screen name="Cocktail" component={Cocktail} />
         <Stack.Screen name="Champagne" component={Champagne} />
         <Stack.Screen name = "Random" component = {Random} />
-             <Stack.Screen name="InformacionScreen" component={InfoGeneral} />
+        <Stack.Screen name="InformacionScreen" component={InfoGeneral} />
+        <Stack.Screen name="SearchResults" component={SearchResults} />
+        <Stack.Screen name="popular" component={Popular} />
       </Stack.Navigator>
       </NavigationContainer>
   );

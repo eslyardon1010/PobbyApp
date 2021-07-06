@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { ScrollView, StyleSheet, View} from "react-native";
-import {fetchDrinkRandom,fetchDrinkOrdinary,fetchDrinkNonAlcoholic,fetchDrinkCocktail,fetchDrinkAlcoholic, fetchDrinkChampagne} from '../../api/index'
+import { ScrollView, StyleSheet, View, ImageBackground} from "react-native";
+import {fetchDrinkRandom,fetchDrinkOrdinary,fetchDrinkNonAlcoholic,fetchDrinkCocktail,fetchDrinkPopular,fetchDrinkAlcoholic, fetchDrinkChampagne} from '../../api/index'
 
+/*---------------------------------CARD PARA BOTONES DE CATEGORIAS-------------------------------------- */
 import { CardCocktailList } from '../CardCocktailList';
-
+import {CardListInfo} from '../CardCocktailList'
 export const Alcoholic = ({navigation}) => {
 const [drinks, setdrinks] = useState({});
 
@@ -151,7 +152,8 @@ const [drinks, setdrinks] = useState({});
 
   return (
     <View style={styles.container}>
-    <ScrollView>
+      <ScrollView>
+
       <View>
         <>{drinks.drinks ? <CardCocktailList cocktail={drinks} navigation={navigation} /> : null}</>
          
@@ -163,8 +165,53 @@ const [drinks, setdrinks] = useState({});
 };
 
 
+export const Popular = ({ navigation }) => {
+const [drinks, setdrinks] = useState({});
+
+  const getdrinks = async () => {
+    const response = await fetchDrinkPopular();
+
+    setdrinks(response);
+  };
+
+  useEffect(() => {
+    getdrinks();
+  }, []);
+
+  return (
+    <View style={styles.containerP}>
+      <ScrollView>
+            <ImageBackground
+          source={require("../../../assets/2backgr.png")}
+        style={styles.Image}
+       />
+      <View>
+        <>{drinks.drinks ? <CardCocktailList cocktail={drinks} navigation={navigation} /> : null}</>  
+      </View>
+      </ScrollView>
+      </View>
+  );
+
+};
+
+
+
 
 const styles = StyleSheet.create({
+  containerP: {
+     flex: 1,
+    flexDirection: "column",
+    backgroundColor: "#000"
+  },
+    Image: {
+    marginTop: 170,
+    flex:1,
+    justifyContent:"center",
+    alignItems:"center",
+    width: 350,
+    height: 480,
+    position:"absolute",
+  },
     container: {
         flex: 1,
         backgroundColor: '#6c5ce7',
