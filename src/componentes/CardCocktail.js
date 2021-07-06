@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
  color: '#fff',
     marginTop: 20,
     fontSize: 10,
-    textAlign: 'letf',
+    textAlign: "left",
     fontFamily: OpenSansCondensed_300Light,
     marginRight: 55,
     marginLeft: 15
@@ -82,15 +82,15 @@ const styles = StyleSheet.create({
   textoInstrucciones: {
    color: '#fff',
     fontSize: 10,
-    textAlign: 'justify',
+    textAlign: "justify",
     fontFamily: OpenSansCondensed_300Light,
     
 },
   title: {
     color: '#fff',
     marginTop: 20,
-    textAlign: 'center',
-    fontWeight: 'bold',
+    textAlign: "center",
+    fontWeight: "bold",
     fontStyle: "italic",
     fontSize: 20,
     fontFamily: OpenSans_600SemiBold_Italic,
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     height: 200,
     width: 200,
     borderRadius: 30,
-    alignSelf: 'center'
+    alignSelf: "center"
   },
 
   containerC: {
@@ -131,14 +131,14 @@ const styles = StyleSheet.create({
     color: '#fff',
     marginTop: 20,
     fontSize: 14,
-    textAlign: 'center',
+    textAlign: "center",
     fontFamily: OpenSansCondensed_300Light,
     margin: 1
   },
   container: {
      //backgroundImage: `url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F328270260337576504%2F&psig=AOvVaw0TilpGdhQSlTWoUunLvGoW&ust=1625601215609000&source=images&cd=vfe&ved=0CAcQjRxqFwoTCPjhiYfkzPECFQAAAAAdAAAAABAD")` ,
     width: deviceWidth - 10,
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 20,
   }, 
   labelStyle: {
@@ -167,13 +167,13 @@ const styles = StyleSheet.create({
     width:100,
     borderRadius: 30,
     opacity: 0.9,
-    alignContent: 'center',
-    alignSelf: 'center',
+    alignContent: "center",
+    alignSelf: "center",
   },
   titleStyle: {
     zIndex: 1,
     fontSize: 14,
-    textAlign: 'center',
+    textAlign: "center",
     marginTop: -58,
     marginLeft: 80,
     fontWeight: "normal",
