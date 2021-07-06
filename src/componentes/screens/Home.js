@@ -59,6 +59,8 @@ Alcoholicas, non-alcoholic, cocktails, champagne, ordinary and random drinks, as
         <TouchableOpacity onPress={() => {navigation.navigate("PopularDrinks")}} style={styles.button_Popular}> 
             <Text style={styles.txt}>Most popular drinks</Text>
         </TouchableOpacity>
+
+        <Text style={styles.txtM}>MADE BY MAYSI AND ESLY </Text>
       </View>
      
     </View>
@@ -68,6 +70,13 @@ Alcoholicas, non-alcoholic, cocktails, champagne, ordinary and random drinks, as
 
 
 const styles = StyleSheet.create({
+  txtM: {
+    fontStyle: "italic",
+    marginTop: 80,
+    textAlign: "center",
+    fontSize: 10,
+    fontWeight: "400"
+  },
   txtT: {
     marginTop: 50,
         fontSize: 20,
