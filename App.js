@@ -6,7 +6,7 @@ import Home from './src/componentes/screens/Home'
 //import NonAlcoholic from './src/componentes/screens/subScreens/NonAlcoholic'
 import {Alcoholic, NonAlcoholic, OrdinaryDrink, Cocktail, Champagne, Random} from './src/componentes/screens/CatScreens'
 
-import { AlcoholicInfo } from './src/componentes/screens/Info';
+import InfoGeneral  from './src/componentes/screens/Info';
 
 function LogoCocktail() {
   return (
@@ -31,8 +31,7 @@ export default function App() {
         <Stack.Screen name="Cocktail" component={Cocktail} />
         <Stack.Screen name="Champagne" component={Champagne} />
         <Stack.Screen name = "Random" component = {Random} />
-        
-        <Stack.Screen name="AlcoholicInfo" component={AlcoholicInfo} />     
+             <Stack.Screen name="InformacionScreen" component={InfoGeneral} />
       </Stack.Navigator>
       </NavigationContainer>
   );

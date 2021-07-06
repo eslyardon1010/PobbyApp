@@ -1,13 +1,11 @@
 
 import React, { useEffect, useState } from "react";
-import { ScrollView, StyleSheet, View, Text,StatusBar, TouchableOpacity} from "react-native";
+import { ScrollView,SafeAreaView, StyleSheet, View, Text,Dimensions, ImageBackground} from "react-native";
 import {mostrarDrink, fetchDrinkNonAlcoholic,fetchDrinkOrdinary, fetchDrinkCocktail, fetchDrinkChampagne, drinkInfo, fetchDrinkAlcoholic, mostrarInfo} from '../../api/index'
 import { CardListInfo } from '../CardCocktailList'
-
 import {CardCocktailList} from '../CardCocktailList'
 
-
-export const AlcoholicInfo = ({navigation}) => {
+ const InfoGeneral = ({navigation}) => {
 const [drinks,  setdrinks] = useState({});
 
   const getdrinks = async () => {
@@ -22,7 +20,12 @@ const [drinks,  setdrinks] = useState({});
 //const Stack = createStackNavigator();
   return (
     <View style={styles.container}>
-    <ScrollView>
+
+      <ScrollView>
+            <ImageBackground
+          source={require("../../../assets/2backgr.png")}
+        style={styles.bgImage}
+       />
 <View>
   <>{drinks.drinks ? <CardListInfo cocktail={drinks} navigation={navigation} /> : null}</>
 </View>
@@ -34,111 +37,25 @@ const [drinks,  setdrinks] = useState({});
 
 };
 
-export const NonAlcoholic = () => {
-const [drinks, setdrinks] = useState({});
 
-  const getdrinks = async () => {
-    const response = await fetchDrinkNonAlcoholic();
+const {width, height} = Dimensions.get("screen");
 
-    setdrinks(response);
-  };
-1
-  useEffect(() => {
-    getdrinks();
-  }, []);
-
-  return (
-    <View style={styles.container}>
-    <ScrollView>
-      <View>
-          <>{drinks.drinks ? <CardInformation mostrar={drinks} /> : null}</>
-
-      </View>
-      </ScrollView>
-      </View>
-  );
-
-};
-export const OrdinaryDrink = () => {
-const [drinks, setdrinks] = useState({});
-
-  const getdrinks = async () => {
-    const response = await fetchDrinkOrdinary();
-
-    setdrinks(response);
-  };
-
-  useEffect(() => {
-    getdrinks();
-  }, []);
-
-  return (
-    <View style={styles.container}>
-    <ScrollView>
-      <View>
-          <>{drinks.drinks ? <CardInformation mostrar={drinks} /> : null}</>
-      </View>
-      </ScrollView>
-      </View>
-  );
-
-};
-
-export const Cocktail = () => {
-const [drinks, setdrinks] = useState({});
-
-  const getdrinks = async () => {
-    const response = await fetchDrinkCocktail();
-
-    setdrinks(response);
-  };
-
-  useEffect(() => {
-    getdrinks();
-  }, []);
-
-  return (
-    <View style={styles.container}>
-   
-    <ScrollView>
-      <View>
-      <>{drinks.drinks ? <CardInformation mostrar={drinks} /> : null}</>
-      </View>
-      </ScrollView>
-      </View>
-  );
-
-};
-export const Champagne = () => {
-const [drinks, setdrinks] = useState({});
-
-  const getdrinks = async () => {
-    const response = await fetchDrinkChampagne();
-
-    setdrinks(response);
-  };
-
-  useEffect(() => {
-    getdrinks();
-  }, []);
-
-  return (
-    <View style={styles.container}>
-    <ScrollView>
-      <View>
-          <>{drinks.drinks ? <CardInformation mostrar={drinks} /> : null}</>
-      </View>
-      </ScrollView>
-      </View>
-  );
-
-};
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#6c5ce7',
-        alignItems: 'center',
-        // justifyContent: 'center',
-      },
-});
+  bgImage: {
+    marginTop: 170,
+    flex:1,
+    justifyContent:"center",
+    alignItems:"center",
+    width: 350,
+    height: 480,
+    position:"absolute",
+  },
 
+  container: {
+    flex: 1,
+    flexDirection: "column",
+    backgroundColor: "#000"
+  },
+})
+
+export default InfoGeneral
