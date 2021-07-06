@@ -3,11 +3,14 @@ import { StyleSheet, Text, Image,  View, TouchableOpacity, ScrollView } from "re
 import BarraDeBusqueda from "../SearchDrink";
 
 
-
+   /* AQUI SE ENCUENTRAN TODOS LOS BOTONES DE LAS CATEGORIAS QUE HAY EN LA APLICACION, 
+   CADA UNO AL PRESIONARLO ESTE DIRIGE A LA SIGUIENTE PANTALLA QUE LE MOSTRARIA UNA LISTA, ESTE 
+   COMPONENTE LO LLAMA DE LA PANTALLA CAT SCREENS. 
+   */
 const Home = ({ navigation }) => {
   return (
     
-                     //*-----------------BOTONES PARA CATEGORIAS------------
+               
     <View style={styles.container}>
      <BarraDeBusqueda navigation={navigation}/>
       <View>
@@ -53,7 +56,7 @@ const Home = ({ navigation }) => {
         <Text style={styles.parrafo}>We offer a wide range of beverage recipes from various categories such as:
 Alcoholicas, non-alcoholic, cocktails, champagne, ordinary and random drinks, as well as a more in-depth view of each specific drink
         </Text>
-        <TouchableOpacity onPress={() => {navigation.navigate("popular")}} style={styles.button_Popular}> 
+        <TouchableOpacity onPress={() => {navigation.navigate("PopularDrinks")}} style={styles.button_Popular}> 
             <Text style={styles.txt}>Most popular drinks</Text>
         </TouchableOpacity>
       </View>

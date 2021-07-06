@@ -4,6 +4,10 @@ import { ScrollView, StyleSheet, View, Dimensions, ImageBackground} from "react-
 import {mostrarInfo} from '../../api/index'
 import { CardListInfo } from '../CardCocktailList'
 
+/* EL METODO PARA CONSEGUIR LA INFORMACION DE CADA BEBIDA QUE PRESIONE 
+SE LE ASIGNA UN IMAGE BACKGROUND PARA QUE TENGA UN FONDO, ESTE ESTA COLOCADO 
+EN LA CARPETA DE ASSETS*/
+
  const InfoGeneral = ({navigation}) => {
 const [drinks,  setdrinks] = useState({});
 

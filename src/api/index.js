@@ -1,14 +1,17 @@
 import getEnvVars from "../../environment";
 
-const { apiUrlbyTypeDrinkAlcoholic } = getEnvVars();
-const { apiUrlbyTypeDrinkNonAlcoholic } = getEnvVars();
-const { apiUrlbyGlassChampagne } = getEnvVars();
-const { apiUrlbyOrdinaryDrink } = getEnvVars();
-const { apiUrlbyCocktail } = getEnvVars();
-const { apiUrlbyMostrar } = getEnvVars();
-const {apiUrlbyRandom} = getEnvVars();
-const {apiUrlybyPopular} = getEnvVars();
+const { apiUrlbyTypeDrinkAlcoholic,
+    apiUrlbyTypeDrinkNonAlcoholic,
+    apiUrlbyGlassChampagne,
+    apiUrlbyOrdinaryDrink,
+    apiUrlbyCocktail,
+    apiUrlbyMostrar,
+    apiUrlbyRandom,
+    apiUrlybyPopular
+} = getEnvVars();
 
+
+/*FUNCION PARA CAPTURAR LOS NOMBRES, DE ESTA DEPENDE EL SEARCH RESULTS Y PANTALLA DE INFO*/
 let name;
 export const obtenerName = ({ obtener }) => {
 
@@ -16,6 +19,9 @@ export const obtenerName = ({ obtener }) => {
   console.log(name);
 }
 
+/*FUNCION FETCH PARA HACER LA PETICION A LA API Y
+ NOS DA COMO RESPUESTA LAS BEBIDAS MAS POPULARES, 
+ DE ESTA DEPENDE EL COMPONENTE POPULAR EN LA PANTALLA CATSCREENS*/
 export const fetchDrinkPopular = async() => {
     try {
         const endpoint = apiUrlybyPopular;
@@ -31,6 +37,7 @@ export const fetchDrinkPopular = async() => {
 };
 
 
+/*A CONTINUACION SE MUESTRAN TODOS LOS METODOS QUE SE UTILIZAN PARA LA PANTALLA CATSCREENS */
 export const fetchDrinkAlcoholic = async() => {
     try {
         const endpoint = apiUrlbyTypeDrinkAlcoholic;
@@ -45,22 +52,7 @@ export const fetchDrinkAlcoholic = async() => {
     }
 };
 
-
-
-
-export const searchDrink = async(name) => {
-    try {
-        const endpoint = `${apiUrlbyTypeDrinkAlcoholic}${name}`;
-
-        const response = await fetch(endpoint);
-        const data = await response.json();
-
-        return data;
-    } catch (error) {
-        console.log(error);
-    }
-};
-
+/*CONSEGUIR LAS BEBIDAS NO ALCOHOLICAS*/
 
 export const fetchDrinkNonAlcoholic = async() => {
     try {
@@ -77,6 +69,10 @@ export const fetchDrinkNonAlcoholic = async() => {
         return { count: 0 };
     }
 };
+
+
+ /*CONSEGUIR TODAS LAS BEBIDAS QUE SON CHAMPAGNE */
+
 export const fetchDrinkChampagne = async() => {
     try {
         const endpoint = apiUrlbyGlassChampagne;
@@ -92,6 +88,8 @@ export const fetchDrinkChampagne = async() => {
         return { count: 0 };
     }
 };
+
+/*PARA BEBIDAS ORDINARIAS */
 export const fetchDrinkOrdinary = async() => {
     try {
         const endpoint = apiUrlbyOrdinaryDrink;
@@ -107,6 +105,9 @@ export const fetchDrinkOrdinary = async() => {
         return { count: 0 };
     }
 };
+
+
+/*TODAS LAS BEBIDAS DE TIPO COCKTEL */
 export const fetchDrinkCocktail = async() => {
     try {
         const endpoint = apiUrlbyCocktail;
@@ -122,6 +123,8 @@ export const fetchDrinkCocktail = async() => {
         return { count: 0 };
     }
 };
+
+/*UNA LISTA DE 10 BEBIDAS RANDOM */
 export const fetchDrinkRandom = async() => {
       try {
         const endpoint = apiUrlbyRandom;
@@ -137,9 +140,14 @@ export const fetchDrinkRandom = async() => {
 };
 
 
+
+/*METODO PARA MOSTRAR LA INFORMACION, DE ESTE DEPENDE LA PANTALLA INFO, SE RECIBE EL PARAMETRO NAME 
+QUE VIENE DEL METODO OBTENER, EL PARAMETRO NAME TRAE EL NOMBRE DE LA BEBIDA QUE ES EL PARAMETRO QUE 
+ESPERA LA URL COLOCADA EN ENVIRONMENT
+
+ESTE MISMO METODO LO ESTAMOS USANDO PARA BUSCAR CUALQUIER BEBIDA POR NOMBRE, ES EL MISMO PROCESO , 
+ASI QUE OPTAMOS POR UNA REUTILIZACION DE CODIGO.*/
 export const mostrarInfo = async() => {
-
-
     try {
         const endpoint = `${apiUrlbyMostrar}${name}`
         const response = await fetch(endpoint);
@@ -157,23 +165,3 @@ export const mostrarInfo = async() => {
 
 };
 
-
-export const searchCocktail = async(name) => {
-
-
-    try {
-        const endpoint = `${apiUrlbyMostrar}${name}`
-        const response = await fetch(endpoint);
-        const data = await response.json();
-
-        console.log(data);
-        return data;
-    } catch (error) {
-        console.log(error);
-        return {
-            count: 0,
-        }
-
-    };
-
-};

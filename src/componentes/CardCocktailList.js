@@ -2,6 +2,8 @@ import React from "react";
 import { StyleSheet, TouchableOpacity, View, FlatList } from "react-native";
 import { CardDrink, CardInformation, CardCharacteres} from "../componentes/CardCocktail";
 
+
+/*EN ESTA PANTALLA MAPEAMOS LOS CAMPOS QUE NOSOTROS NECESITAMOS */
 export const CardCocktailList = ({ cocktail, navigation, index }) => {
   return (
     <View style={styles.container}>

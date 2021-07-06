@@ -6,7 +6,6 @@ import {Alcoholic, NonAlcoholic, OrdinaryDrink, Cocktail, Champagne, Random,Popu
 
 import InfoGeneral  from './src/componentes/screens/Info';
 import SearchResults from './src/componentes/screens/SearchResults';
-
 const Stack = createStackNavigator();
 export default function App() {
   return (
@@ -21,7 +20,7 @@ export default function App() {
         <Stack.Screen name = "Random" component = {Random} />
         <Stack.Screen name="InformacionScreen" component={InfoGeneral} />
         <Stack.Screen name="SearchResults" component={SearchResults} />
-        <Stack.Screen name="popular" component={Popular} />
+        <Stack.Screen name="PopularDrinks" component={Popular} />
       </Stack.Navigator>
       </NavigationContainer>
   );

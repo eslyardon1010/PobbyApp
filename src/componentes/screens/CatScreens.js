@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, View, ImageBackground} from "react-native";
 import {fetchDrinkRandom,fetchDrinkOrdinary,fetchDrinkNonAlcoholic,fetchDrinkCocktail,fetchDrinkPopular,fetchDrinkAlcoholic, fetchDrinkChampagne} from '../../api/index'
-
-/*---------------------------------CARD PARA BOTONES DE CATEGORIAS-------------------------------------- */
 import { CardCocktailList } from '../CardCocktailList';
 import {CardListInfo} from '../CardCocktailList'
+/*---------------------------------CARD PARA BOTONES DE CATEGORIAS-------------------------------------- */
+
+
+
+/*METODO PARA CONSEGUIR TODAS LAS BEBIDAS ALCOHOLICAS, TRAE EL FETCH QUE ESTA COLOCADO EN INDEX
+Y RECIBE COMO PARAMETRO NAVEGACION, QUE ESTE SE LO PASAMOS PARA QUE SE PUEDA NAVEGAR ENTRE PAGINAS
+
+
+Y ES EL MISMO PROCESO CON EL RESTO DE LOS METODOS. 
+
+ESTOS FUNCIONAN CON LOS BOTONES COLOCADOS EN LA PANTALLA HOME. 
+*/
 export const Alcoholic = ({navigation}) => {
 const [drinks, setdrinks] = useState({});
 

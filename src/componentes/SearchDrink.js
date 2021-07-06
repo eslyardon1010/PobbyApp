@@ -2,6 +2,14 @@ import * as React from 'react';
 import { Searchbar } from 'react-native-paper';
 import { StyleSheet } from 'react-native'
 import { obtenerName } from "../api/index";
+
+
+/*AL PRESIONAR EL ICONO DE BUSCAR NOSOTROS LE PASAMOS EL METODO DE OBTENER NAME Y A ESTE LE ESTAMOS MANDANDO LOS QUE 
+INGRESE EN EL SEARCHBAR Y NOS ARROJA COMO RESULTADO TODAS LAS BEBIDAS QUE SE RELACIONAN AL NOMBRE QUE ESCRIBIO. 
+
+LA BUSQUEDA ES POR NOMBRE EN INGLES. 
+
+*/
 const BarraDeBusqueda = ({navigation}) => {
   const [searchQuery, setSearchQuery] = React.useState("");
 

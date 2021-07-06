@@ -4,7 +4,7 @@ import { obtenerName } from "../api";
 import * as Animatable from "react-native-animatable";
 
 
-
+/*AQUI CONSEGUIMOS LA INFORMACION PARA LA PANTALLA DONDE SOLO SE MUESTRA LA FOTO Y EL NOMBRE. */
 export const CardDrink = ({ navigation, cocktail }) => {
 console.log(cocktail);
     return (
@@ -22,6 +22,8 @@ console.log(cocktail);
   
   );
 };
+
+/*ESTE METODO NOS CONSIGUE TODA LA INFOORMACION QUE NOSOTROS NECESITAMOS DE NUESTRA API PARA MOSTRARLA EN PANTALLA*/
  
 export const CardInformation = ({ cocktail }) => {
   return (
@@ -65,7 +67,7 @@ const styles = StyleSheet.create({
    color: '#fff',
     marginTop: 20,
     fontSize: 10,
-    textAlign: "left",
+    textAlign: "center",
     
     marginRight: 55,
     marginLeft: 15
@@ -74,10 +76,12 @@ const styles = StyleSheet.create({
   textoInstrucciones: {
    color: '#fff',
     fontSize: 10,
-    textAlign: "justify",
-    
+    textAlign: "center",
+    backgroundColor: 'red',
     borderRadius: 30,
-    
+    marginRight: 80, 
+    marginTop: 14, 
+    marginLeft: 5
   }
   ,
   title: {

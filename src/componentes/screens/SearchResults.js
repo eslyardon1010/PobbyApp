@@ -4,6 +4,7 @@ import { ScrollView, StyleSheet, View, Dimensions, ImageBackground} from "react-
 import {mostrarInfo} from '../../api/index'
 import { CardListInfo } from '../CardCocktailList'
 
+/*METODO PARA CONSEGUIR LOS RESULTADOS DE LA BUSQUEDA, ESTE DEPENDE DEL COMPONENTE SEARCH DRINK*/
  const SearchResults = ({navigation}) => {
 const [drinks,  setdrinks] = useState({});
 
