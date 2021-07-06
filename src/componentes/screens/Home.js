@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     color: '#ffe045',
     fontStyle: "italic",
     fontWeight: "bold",
+    textAlign:"center"
    
   },
   parrafo: {
@@ -89,6 +90,7 @@ const styles = StyleSheet.create({
     color: '#ffe045',
     fontStyle: "italic",
     fontWeight: "bold",
+    textAlign:"center"
 
   }, 
   img: {
@@ -99,13 +101,7 @@ const styles = StyleSheet.create({
     opacity: 0.7,
     borderRadius: 30
   },
-  searchBar: {
-    marginTop: 20,
-    width: 300,
-    height: 35,
-    borderRadius: 30,
-    marginLeft: 32
-  },
+ 
   container: {
           position: 'relative',
           flex: 1,
@@ -128,7 +124,7 @@ const styles = StyleSheet.create({
           zIndex: 1,
           width: 105,
           height: 110,
-          marginLeft: 10,
+          marginLeft: 20,
     marginTop: 16,
     borderRadius: 20,
           shadowColor: '#000',
@@ -147,7 +143,7 @@ const styles = StyleSheet.create({
           zIndex: 1,
           width: 110,
           height: 110,
-    marginLeft: 10,
+    marginLeft: 20,
     marginTop: 25,
            borderRadius: 20,
           shadowColor: '#000',
@@ -165,7 +161,7 @@ const styles = StyleSheet.create({
          position : 'absolute',
           width: 105,
          height: 110,
-    marginLeft: 242,
+    marginLeft: 280,
     marginTop: 186,
      borderRadius: 20,
           shadowColor: '#000',
@@ -183,7 +179,7 @@ const styles = StyleSheet.create({
           position: 'absolute',
           width: 110,
           height: 110,
-          marginLeft: 242,
+          marginLeft: 280,
     marginTop: 52,
      borderRadius: 20,
           shadowColor: '#000',
@@ -200,7 +196,7 @@ const styles = StyleSheet.create({
             position: 'absolute',
           width: 110,
             height: 110,
-    marginLeft: 126,
+    marginLeft: 150,
     marginTop: 52,
      borderRadius: 20,
           shadowColor: '#000',
@@ -217,7 +213,7 @@ const styles = StyleSheet.create({
             position: 'absolute',
           width: 110,
             height: 110,
-    marginLeft: 126,
+    marginLeft: 150,
     marginTop: 186,
      borderRadius: 20,
           shadowColor: '#000',
@@ -235,8 +231,8 @@ const styles = StyleSheet.create({
             position: 'absolute',
           width: 200,
             height: 40,
-    marginLeft: 80,
-    marginTop: 530,
+    marginLeft: 100,
+    marginTop: 500,
      borderRadius: 20,
           shadowColor: '#000',
     shadowOffset: {
@@ -252,7 +248,8 @@ const styles = StyleSheet.create({
     marginTop: 7,
     fontStyle: "italic",
     fontWeight: "bold",
-    fontSize: 16
+    fontSize: 16,
+    textAlign: "center"
   }
        });
       

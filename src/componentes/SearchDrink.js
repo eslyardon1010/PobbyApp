@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
     width: 300,
     height: 35,
     borderRadius: 30,
-    marginLeft: 32, 
+    alignContent: "center",
+    alignSelf:"center",
      shadowColor: '#000',
     shadowOffset: {
       width: 5,

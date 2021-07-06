@@ -2,7 +2,7 @@ import React from "react";
 import {Image, StyleSheet, Text, View, Dimensions, TouchableOpacity, SafeAreaView, Card } from "react-native";
 import { obtenerName } from "../api";
 import * as Animatable from "react-native-animatable";
-import { OpenSansCondensed_300Light, OpenSans_600SemiBold_Italic } from "@expo-google-fonts/dev";
+
 
 
 export const CardDrink = ({ navigation, cocktail }) => {
@@ -62,11 +62,11 @@ const radius = 30;
 
 const styles = StyleSheet.create({
   textoIngredient: {
- color: '#fff',
+   color: '#fff',
     marginTop: 20,
     fontSize: 10,
     textAlign: "left",
-    fontFamily: OpenSansCondensed_300Light,
+    
     marginRight: 55,
     marginLeft: 15
   },
@@ -75,9 +75,9 @@ const styles = StyleSheet.create({
    color: '#fff',
     fontSize: 10,
     textAlign: "justify",
-    fontFamily: OpenSansCondensed_300Light,
+    
     borderRadius: 30,
-    backgroundColor: ' #ffe045'
+    
   }
   ,
   title: {
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontStyle: "italic",
     fontSize: 20,
-    fontFamily: OpenSans_600SemiBold_Italic,
+    
   },
 
   imageCard: {
@@ -131,12 +131,11 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontSize: 14,
     textAlign: "center",
-    fontFamily: OpenSansCondensed_300Light,
+    
     margin: 1
   },
 
   container: {
-     //backgroundImage: `url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F328270260337576504%2F&psig=AOvVaw0TilpGdhQSlTWoUunLvGoW&ust=1625601215609000&source=images&cd=vfe&ved=0CAcQjRxqFwoTCPjhiYfkzPECFQAAAAAdAAAAABAD")` ,
     width: deviceWidth - 10,
     alignItems: "center",
     marginTop: 20,
@@ -149,14 +148,13 @@ const styles = StyleSheet.create({
 
   cardContainer: {
     width: deviceWidth - offset,
-    backgroundColor: '#000',
-    height: 110
-    ,
+    backgroundColor:'#000',
+    height: 110,
     borderRadius: radius,
     shadowColor: '#ffe045',
     shadowOffset: {
-      width: 5,
-      height: 5,
+      width: 10,
+      height: 10,
     },
     shadowOpacity: 0.75,
     shadowRadius: 5,
